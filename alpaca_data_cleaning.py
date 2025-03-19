@@ -41,12 +41,10 @@ def process_batch(examples, accelerator):
         with torch.no_grad():
             outputs = model.generate(
                 **inputs,
-                max_new_tokens=len(text)*3,
+                max_new_tokens=len(text)*2,
                 do_sample=False,  # 关闭随机采样，提高确定性
                 temperature=0.1,
-                repetition_penalty=1.2,  # 轻微增加重复惩罚
-                no_repeat_ngram_size=3,
-                early_stopping=True
+                repetition_penalty=3,  # 轻微增加重复惩罚
             )
 
         # 解析输出
