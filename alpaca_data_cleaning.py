@@ -44,7 +44,7 @@ def process_batch(examples, accelerator):
                 max_new_tokens=len(text)*2,
                 do_sample=False,  # 关闭随机采样，提高确定性
                 temperature=0.1,
-                repetition_penalty=3,  # 轻微增加重复惩罚
+                repetition_penalty=2.0,  # 轻微增加重复惩罚
             )
 
         # 解析输出
