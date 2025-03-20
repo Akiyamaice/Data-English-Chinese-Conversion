@@ -6,10 +6,10 @@ import multiprocess
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import json
 
-# 设置模型路径
-model_name = "/107552401627/esm_code/model/Qwen2.5-7B-Instruct"
-# 数据集路径
-local_dataset_path = "/107552401627/esm_code/datasets/alpaca-cleaned/alpaca_data_cleaned.json"
+# 替换本地模型位置
+model_name = "Qwen/Qwen2.5-7B-Instruct"
+# 替换本地数据位置
+local_dataset_path = "yahma/alpaca-cleaned"
 device_name = "cuda"
 USE_DEVICES = [0, 1]
 BATCH_SIZE = 8
