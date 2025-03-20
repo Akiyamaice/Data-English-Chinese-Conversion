@@ -1,9 +1,11 @@
 import json
 import re
 
-def calculate_english_ratio(text):
-    # 统计英文字母数量（A-Za-z）
-    english_chars = len(re.findall(r'[A-Za-z]', text))
+def calculate_english_word_ratio(text):
+    # 匹配完整的英文单词（纯字母组成，不包含数字和符号）
+    english_words = re.findall(r'\b[A-Za-z]+\b', text)
+    # 计算所有英文单词的总字符数
+    english_chars = sum(len(word) for word in english_words)
     total_chars = len(text)
     if total_chars == 0:
         return 0.0
