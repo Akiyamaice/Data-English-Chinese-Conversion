@@ -71,7 +71,7 @@ def process_batch(examples, rank):
 
 
 if __name__ == "__main__":
-    # 加载数据集并选择前1000条
+    # 加载数据集并选择前500条
     dataset = load_dataset("json", data_files=local_dataset_path)["train"].select(range(500))
     multiprocess.set_start_method("spawn")
     # 使用map接口并行处理数据
